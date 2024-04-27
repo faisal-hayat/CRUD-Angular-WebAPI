@@ -28,15 +28,24 @@ namespace BackendAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-            return await _context.Employees.ToListAsync();
+            // return await _context.Employees.ToListAsync();
+            List<Employee> employeesList = await _employeeService.GetAllEmployeesAsync();
+            if(employeesList != null && employeesList.Count > 0)
+            {
+                return employeesList;
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
-            var employee = await _context.Employees.FindAsync(id);
-
+            // var employee = await _context.Employees.FindAsync(id);
+            Employee employee = await _employeeService.GetEmployeeById(id);
             if (employee == null)
             {
                 return NotFound();
@@ -104,14 +113,15 @@ namespace BackendAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
-            var employee = await _context.Employees.FindAsync(id);
+            var employee = await _employeeService.GetEmployeeById(id);
             if (employee == null)
             {
                 return NotFound();
             }
 
-            _context.Employees.Remove(employee);
-            await _context.SaveChangesAsync();
+            await _employeeService.DeleteEmployeeById(id);
+            // _context.Employees.Remove(employee);
+            // await _context.SaveChangesAsync();
 
             return NoContent();
         }
