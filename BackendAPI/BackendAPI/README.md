@@ -1,16 +1,12 @@
-# FrontEnd
+# Backend API
 [source](https://www.youtube.com/watch?v=IJ2P9fodf7c&ab_channel=CodeWithVed)
 
 --- ---
 
-## Components
+## Dependencies
 
---- ---
-
-## Interfaces
-
---- ---
-
-## Services
+- Core
+- SqlServer
+- Tools
 
 --- ---
