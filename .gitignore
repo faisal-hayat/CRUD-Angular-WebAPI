@@ -588,4 +588,6 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
+appsettings.json
+
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore,angular,visualstudio,visualstudiocode,microsoftoffice
