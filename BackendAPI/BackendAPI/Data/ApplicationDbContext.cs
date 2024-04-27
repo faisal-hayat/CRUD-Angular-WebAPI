@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BackendAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackendAPI.Data
 {
@@ -10,5 +11,6 @@ namespace BackendAPI.Data
         }
 
         // This is where we will be adding the models to DB
+        public DbSet<Employee> Employees { get; set; }
     }
 }

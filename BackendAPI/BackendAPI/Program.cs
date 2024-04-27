@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,11 @@ builder.Services.AddDbContext<BackendAPI.Data.ApplicationDbContext>(options => o
     builder.Configuration.GetConnectionString("DefaultConnection")
 ));
 #endregion
+
+//#region set culture
+//CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+//CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
+//#endregion
 
 var app = builder.Build();
 

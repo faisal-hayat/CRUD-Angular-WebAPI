@@ -134,3 +134,4 @@ E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\refint\BackendAPI.dll
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.pdb
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.genruntimeconfig.cache
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\ref\BackendAPI.dll
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.sourcelink.json

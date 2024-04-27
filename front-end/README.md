@@ -5,12 +5,32 @@
 
 ## Components
 
+```commandline
+ng g c components/employee-list
+```
+
 --- ---
 
 ## Interfaces
 
+```commandline
+ng g interface interfaces/name
+```
+
 --- ---
 
 ## Services
+
+```commandline
+ng g s services/name
+```
+
+--- ---
+
+## Add material theme
+
+```commandline
+ng add @angular/material
+```
 
 --- ---
