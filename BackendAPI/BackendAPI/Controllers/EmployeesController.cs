@@ -20,7 +20,7 @@ namespace BackendAPI.Controllers
         public EmployeesController(ApplicationDbContext context, IEmployeeService employeeService)
         {
             _context = context;
-            _employeeService = employeeService
+            _employeeService = employeeService;
         }
 
         #region Get methods
@@ -96,7 +96,15 @@ namespace BackendAPI.Controllers
             {
                 //_context.Employees.Add(employee);
                 //await _context.SaveChangesAsync();
-                await _employeeService.AddEmployee(employee);
+                if (ModelState.IsValid)
+                {
+                    await _employeeService.AddEmployee(employee);
+                    return Ok(new { message = "Employee added successfull", status = true });
+                }
+                else
+                {
+                    return BadRequest();
+                }
             }
             catch (Exception ex)
             {

@@ -1,3 +1,5 @@
+using BackendAPI.Services;
+using BackendAPI.Services.IServices;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
@@ -14,6 +16,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BackendAPI.Data.ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
 ));
+#endregion
+
+#region add servcies
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 #endregion
 
 //#region set culture
