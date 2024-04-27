@@ -11,7 +11,7 @@ using BackendAPI.Services.IServices;
 
 namespace BackendAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/employes")]
     [ApiController]
     public class EmployeesController : ControllerBase
     {
@@ -25,14 +25,14 @@ namespace BackendAPI.Controllers
 
         #region Get methods
         // GET: api/Employees
-        [HttpGet]
+        [HttpGet("getAllEmployees")]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
             // return await _context.Employees.ToListAsync();
             List<Employee> employeesList = await _employeeService.GetAllEmployeesAsync();
             if(employeesList != null && employeesList.Count > 0)
             {
-                return employeesList;
+                return Ok(employeesList);
             }
             else
             {
@@ -41,7 +41,7 @@ namespace BackendAPI.Controllers
         }
 
         // GET: api/Employees/5
-        [HttpGet("{id}")]
+        [HttpGet("getEmployeeById")]
         public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
             // var employee = await _context.Employees.FindAsync(id);
@@ -89,7 +89,7 @@ namespace BackendAPI.Controllers
 
         // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("addEmployee")]
         public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
         {
             try
@@ -118,7 +118,7 @@ namespace BackendAPI.Controllers
 
         #region delete methods
         // DELETE: api/Employees/5
-        [HttpDelete("{id}")]
+        [HttpDelete("deleteEmployee")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
             var employee = await _employeeService.GetEmployeeById(id);

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Employee } from '../../interfaces/employee';
+import { EmployeeServiceService } from '../../services/employee-service.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -12,12 +13,12 @@ export class EmployeeListComponent {
   // define props here
   employees: Employee[] = [];
 
-  constructor(){
-
+  constructor(private employeeService: EmployeeServiceService){
+    this.employeeService = employeeService;
   }
   //#region: life cycle methods
-  ngOnInit(): void{
-    
+  ngOnInit(){
+    this.employees = this.employeeService.getAllEmployees();
   }
   //#endregion
 
