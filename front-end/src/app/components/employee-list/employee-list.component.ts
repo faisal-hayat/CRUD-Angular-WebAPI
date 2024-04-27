@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from '../../interfaces/employee';
 
 @Component({
   selector: 'app-employee-list',
@@ -8,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './employee-list.component.css'
 })
 export class EmployeeListComponent {
+  // define props here
+  employees: Employee[] = [];
+
+  constructor(){
+
+  }
+  //#region: life cycle methods
+  ngOnInit(): void{
+    
+  }
+  //#endregion
 
 }
