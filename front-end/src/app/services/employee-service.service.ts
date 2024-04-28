@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { CONFIG } from '../config/URLS';
 import { Employee } from '../interfaces/employee';
-import { Observable, of } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +11,21 @@ import { Observable, of } from 'rxjs';
 export class EmployeeServiceService {
   // define props here
   // httpClient: HttpClient = Inject(HttpClient);
-  
+  httpOptions: any;
   constructor(private httpClient: HttpClient) {
     this.httpClient = httpClient; 
+    this.httpOptions = 
+      {
+          headers: new HttpHeaders({'Content-Type': 'application/json'}),
+          rejectUnauthorized: false
+      };
   }
 
-  getAllEmployees(): Employee[] {
-    var result: Employee[] = []; 
-    this.httpClient.get<Employee[]>(`${CONFIG.BASE_URL}+${CONFIG.EMPLOYEE.GET_ALL_EMPLOYEES}`).subscribe((res: Employee[]) => {
-      result = res;
-    });
-    return result;
-    }
+  getAllEmployees(): Observable<Employee[]> {
+    var apiLink: string = `${CONFIG.BASE_URL}${CONFIG.EMPLOYEE.GET_ALL_EMPLOYEES}`;
+    console.log("apiLink is : " + apiLink.toString())
+    return this.httpClient.get<Employee[]>(`${apiLink}`);
+}
+
 }
 

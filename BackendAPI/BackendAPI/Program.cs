@@ -22,11 +22,6 @@ builder.Services.AddDbContext<BackendAPI.Data.ApplicationDbContext>(options => o
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 #endregion
 
-//#region set culture
-//CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
-//CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
-//#endregion
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,5 +34,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+#region set cors policy
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+#endregion
 
 app.Run();

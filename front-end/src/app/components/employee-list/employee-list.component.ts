@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { Employee } from '../../interfaces/employee';
 import { EmployeeServiceService } from '../../services/employee-service.service';
+import { HttpClientModule, HttpEvent } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [],
+  imports: [
+    HttpClientModule
+  ],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.css'
 })
@@ -18,7 +22,10 @@ export class EmployeeListComponent {
   }
   //#region: life cycle methods
   ngOnInit(){
-    this.employees = this.employeeService.getAllEmployees();
+    this.employeeService.getAllEmployees().subscribe((res: Employee[]) => {
+      this.employees = res;
+      console.log("employee list is : "+this.employees)
+    })
   }
   //#endregion
 
