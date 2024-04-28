@@ -1,2 +1,48 @@
-<p>employee-form works!</p>
+<div class="m-5">
+    <div class="shadow p-5">
+        <h4>Create Employee</h4>
+        <form action="" method="post" class="shadow">
+        <!-- Name -->
+        <div class="flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput placeholder="name" name="name" [(ngModel)]="createEmployee.name">
+            </mat-form-field>
+        </div>
+        <!-- Email -->
+        <div class="w-full flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="email" name="email" [(ngModel)]="createEmployee.email">
+            </mat-form-field>
+        </div>
+        <!-- Phone -->
+        <div class="w-full flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Phone</mat-label>
+                <input type="tel" matInput placeholder="phone" name="phone" [(ngModel)]="createEmployee.phone">
+            </mat-form-field>
+        </div>
+        <!-- Age -->
+        <div class="w-full flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Age</mat-label>
+                <input type="number" matInput placeholder="age" name="age" [(ngModel)]="createEmployee.age">
+            </mat-form-field>
+        </div>
+        <!-- Salary -->
+        <div class="w-full flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Salary</mat-label>
+                <input type="number" matInput placeholder="salary" name="salary" [(ngModel)]="createEmployee.salary">
+            </mat-form-field>
+        </div>
+        <!-- Submit button  -->
+        <div class="flex justify-center">
+            <button mat-raised-button color="primary">Submit</button>
+        </div>
+    </form>
+    </div>
+    
+</div>
 <router-outlet></router-outlet>

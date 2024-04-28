@@ -3,13 +3,22 @@ import { CommonModule } from '@angular/common';
 import { EmployeeServiceService } from '../../services/employee-service.service';
 import { Employee } from '../../interfaces/employee';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-employee-form',
   standalone: true,
   imports: [
     CommonModule, 
-    RouterModule
+    RouterModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.css'

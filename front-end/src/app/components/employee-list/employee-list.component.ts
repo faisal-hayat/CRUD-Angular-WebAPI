@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     HttpClientModule, 
     MatTableModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    RouterLink
   ],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.css'
