@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmployeeServiceService } from '../../services/employee-service.service';
 import { Employee } from '../../interfaces/employee';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule, 
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule
@@ -33,6 +35,14 @@ export class EmployeeFormComponent {
     salary: 0
   }
   errorMessage: string = "";
+  formBuilder = Inject(FormBuilder);
+  employeeForm = this.formBuilder.group({
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required]],
+    phone: [''],
+    age: [10, []],
+    salary: [0, []],
+  });
   //#region constructor
   constructor(private employeeService: EmployeeServiceService){
     this.employeeService = employeeService;
