@@ -20,12 +20,21 @@ export class EmployeeServiceService {
           rejectUnauthorized: false
       };
   }
-
+  //#region: get methods
   getAllEmployees(): Observable<Employee[]> {
     var apiLink: string = `${CONFIG.BASE_URL}${CONFIG.EMPLOYEE.GET_ALL_EMPLOYEES}`;
     console.log("apiLink is : " + apiLink.toString())
     return this.httpClient.get<Employee[]>(`${apiLink}`);
-}
+  }
+  //#endregion
+
+  //#region post methods
+  createEmployee(postData: Employee){
+    var createLink: string = `${CONFIG.BASE_URL}${CONFIG.EMPLOYEE.ADD_EMPLOYEE}`;
+    console.log("create employee api link is : " + createLink.toString());
+    return this.httpClient.post(`${createLink}`, {postData});
+  }
+  //#endregion
 
 }
 

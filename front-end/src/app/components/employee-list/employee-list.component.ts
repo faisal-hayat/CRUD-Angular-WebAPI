@@ -19,11 +19,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './employee-list.component.css'
 })
 export class EmployeeListComponent {
-  // define props here
+  //#region: define props here
   employees: Employee[] = [];
   errorMessage: string = "";
   displayedColumns : string[] = ["id", "name", "email", "phone", "age", "salary"];
-
+  //#endregion
   constructor(private employeeService: EmployeeServiceService){
     this.employeeService = employeeService;
     
@@ -39,12 +39,4 @@ export class EmployeeListComponent {
     })
   }
   //#endregion
-}
-
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
 }

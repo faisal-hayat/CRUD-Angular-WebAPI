@@ -1,7 +1,7 @@
 @if(employees && employees.length > 0){
     <div class="w-full outline-dashed">
         <div class="flex justify-end p-2">
-            <button mat-raised-button color="primary">Add Employee</button>
+            <button mat-raised-button color="primary" routerLink="create-employee">Add Employee</button>
         </div>
         <div class="w-full">
             <table mat-table [dataSource]="employees" class="mat-elevation-z8">
