@@ -85,7 +85,7 @@ export class EmployeeFormComponent {
     },
     error => {
       this.errorMessage = error;
-      this.toastrService.error("Error", "Something went wrong " + error.toString());
+      // this.toastrService.error("Error", "Something went wrong " + error.toString());
     });
   }
   //#endregion

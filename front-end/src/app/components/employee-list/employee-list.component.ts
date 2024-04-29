@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -27,9 +28,12 @@ export class EmployeeListComponent {
   errorMessage: string = "";
   displayedColumns : string[] = ["id", "name", "email", "phone", "age", "salary", "action"];
   //#endregion
-  constructor(private employeeService: EmployeeServiceService, private toastrService: ToastrService){
+  constructor(private employeeService: EmployeeServiceService, private toastrService: ToastrService,
+    private router: Router)
+  {
     this.employeeService = employeeService;
     this.toastrService = toastrService;
+    this.router = router;
   }
   //#region: life cycle methods
   ngOnInit(){
@@ -39,7 +43,7 @@ export class EmployeeListComponent {
     },
     error => {
       this.errorMessage = "An error occurred while fetching data";
-      this.toastrService.error("Error", "something went wrong");
+      // this.toastrService.error("Error", "something went wrong");
     })
   }
   //#endregion
@@ -47,6 +51,7 @@ export class EmployeeListComponent {
   //#region edit employee
   eidtEmployee(id: number) {
     this.toastrService.success("sucess", "selected employee id : " + id.toString()); 
+    this.router.navigateByUrl(`/employee/${id}`);
   } 
   //#endregion
 

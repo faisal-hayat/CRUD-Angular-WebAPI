@@ -17,6 +17,10 @@ export const routes: Routes = [
         component: EmployeeFormComponent
     },
     {
+        path: 'employee/:id',
+        component: EmployeeFormComponent
+    },
+    {
         // wild card route 
         path: "**",
         component: NotFoundError
