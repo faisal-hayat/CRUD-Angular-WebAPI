@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -34,11 +35,13 @@ export class EmployeeFormComponent {
   
   //#region constructor
   constructor(private employeeService: EmployeeServiceService, private formBuilder: FormBuilder,
-            private router: Router)
+          private router: Router,
+          private toastrService: ToastrService)
   {
     this.employeeService = employeeService;
     this.formBuilder = formBuilder;
     this.router = router;
+    this.toastrService = toastrService;
   }
   //#endregion
 
@@ -77,12 +80,12 @@ export class EmployeeFormComponent {
   addEmployee(data: any): void{
     this.employeeService.createEmployee(data).subscribe((res: any) => {
       console.log("response is : " + res);
-      alert("success: employee created successfully");
-      this.router.navigateByUrl("employee-list");
+      this.toastrService.success("success", "employee has been added sucessfully");
+      this.router.navigateByUrl("/employee-list");
     },
     error => {
       this.errorMessage = error;
-      console.log(error);
+      this.toastrService.error("Error", "Something went wrong " + error.toString());
     });
   }
   //#endregion

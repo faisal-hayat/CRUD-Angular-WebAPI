@@ -10,6 +10,7 @@
 - Components
 - Services
 - Proxy Config and CORS
+- Toastr
 
 --- ---
 
