@@ -7,7 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-employee-list',
@@ -29,11 +30,12 @@ export class EmployeeListComponent {
   displayedColumns : string[] = ["id", "name", "email", "phone", "age", "salary", "action"];
   //#endregion
   constructor(private employeeService: EmployeeServiceService, private toastrService: ToastrService,
-    private router: Router)
+    private router: Router, private activeRoute: ActivatedRoute)
   {
     this.employeeService = employeeService;
     this.toastrService = toastrService;
     this.router = router;
+    this.activeRoute = activeRoute;
   }
   //#region: life cycle methods
   ngOnInit(){

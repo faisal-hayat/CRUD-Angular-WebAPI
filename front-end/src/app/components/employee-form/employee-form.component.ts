@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmployeeServiceService } from '../../services/employee-service.service';
 import { Employee } from '../../interfaces/employee';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FormBuilder, FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Observable, map } from 'rxjs';
 
 
 @Component({
@@ -31,17 +32,20 @@ export class EmployeeFormComponent {
   //#region define props here
   errorMessage: string = "";
   employeeForm: any;
+  routeId:any = null;
   //#endregion
   
   //#region constructor
   constructor(private employeeService: EmployeeServiceService, private formBuilder: FormBuilder,
           private router: Router,
-          private toastrService: ToastrService)
+          private toastrService: ToastrService,
+        private activatedRoute: ActivatedRoute)
   {
     this.employeeService = employeeService;
     this.formBuilder = formBuilder;
     this.router = router;
     this.toastrService = toastrService;
+    this.activatedRoute = activatedRoute;
   }
   //#endregion
 
@@ -54,6 +58,7 @@ export class EmployeeFormComponent {
       age: [10, []],
       salary: [0, []],
     });
+    this.routeId = this.activatedRoute.snapshot.params['id'];
   }
   //#endregion
 
