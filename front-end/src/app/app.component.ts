@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { ToastrModule } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
     RouterOutlet,
     CommonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ToastrModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

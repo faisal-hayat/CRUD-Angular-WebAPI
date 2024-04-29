@@ -32,7 +32,7 @@ export class EmployeeServiceService {
   createEmployee(postData: Employee){
     var createLink: string = `${CONFIG.BASE_URL}${CONFIG.EMPLOYEE.ADD_EMPLOYEE}`;
     console.log("create employee api link is : " + createLink.toString());
-    return this.httpClient.post(`${createLink}`, {postData});
+    return this.httpClient.post(`${createLink}`, postData);
   }
   //#endregion
 

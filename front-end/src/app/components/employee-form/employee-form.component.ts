@@ -27,34 +27,56 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class EmployeeFormComponent {
   // define props here
-  createEmployee: Employee = {
-    id: 0,
-    name: "",
-    email: "",
-    age: 0,
-    salary: 0
-  }
   errorMessage: string = "";
-  formBuilder = Inject(FormBuilder);
-  employeeForm = this.formBuilder.group({
-    name: ['', [Validators.required]],
-    email: ['', [Validators.required]],
-    phone: [''],
-    age: [10, []],
-    salary: [0, []],
-  });
+  // formBuilder = Inject(FormBuilder);
+  employeeForm: any;
   //#region constructor
-  constructor(private employeeService: EmployeeServiceService){
+  constructor(private employeeService: EmployeeServiceService, private formBuilder: FormBuilder){
     this.employeeService = employeeService;
+    this.formBuilder = formBuilder;
   }
   //#endregion
 
-  addEmployee(data: Employee){
+  //#region life cycle methods
+  ngOnInit(){
+    this.employeeForm = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', []],
+      age: [10, []],
+      salary: [0, []],
+    });
+  }
+  //#endregion
+
+  //#region save function for form when form is submitted
+  saveForm() {
+    // we will be calling the below mentioned
+    const data: any = {
+      name: this.employeeForm.value.name,
+      email: this.employeeForm.value.email,
+      age: this.employeeForm.value.age,
+      salary: this.employeeForm.value.salary
+    }
+    
+    console.log("form data is : " + JSON.stringify(data));
+    try{
+      this.addEmployee(data);
+    }catch(error){
+      console.error(error);
+    }  
+  }
+  //#endregion
+
+  //#region create employee
+  addEmployee(data: any): void{
     this.employeeService.createEmployee(data).subscribe((res: any) => {
       console.log("response is : " + res);
     },
     error => {
       this.errorMessage = error;
-    })
+      console.log(error);
+    });
   }
+  //#endregion
 }
