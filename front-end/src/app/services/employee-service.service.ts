@@ -20,7 +20,8 @@ export class EmployeeServiceService {
           rejectUnauthorized: false
       };
   }
-  //#region: get methods
+
+  //#region get methods
   getAllEmployees(): Observable<Employee[]> {
     var apiLink: string = `${CONFIG.BASE_URL}${CONFIG.EMPLOYEE.GET_ALL_EMPLOYEES}`;
     console.log("apiLink is : " + apiLink.toString())

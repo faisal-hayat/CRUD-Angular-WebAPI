@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,14 +27,18 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './employee-form.component.css'
 })
 export class EmployeeFormComponent {
-  // define props here
+  //#region define props here
   errorMessage: string = "";
-  // formBuilder = Inject(FormBuilder);
   employeeForm: any;
+  //#endregion
+  
   //#region constructor
-  constructor(private employeeService: EmployeeServiceService, private formBuilder: FormBuilder){
+  constructor(private employeeService: EmployeeServiceService, private formBuilder: FormBuilder,
+            private router: Router)
+  {
     this.employeeService = employeeService;
     this.formBuilder = formBuilder;
+    this.router = router;
   }
   //#endregion
 
@@ -72,6 +77,8 @@ export class EmployeeFormComponent {
   addEmployee(data: any): void{
     this.employeeService.createEmployee(data).subscribe((res: any) => {
       console.log("response is : " + res);
+      alert("success: employee created successfully");
+      this.router.navigateByUrl("employee-list");
     },
     error => {
       this.errorMessage = error;
@@ -79,4 +86,5 @@ export class EmployeeFormComponent {
     });
   }
   //#endregion
+
 }
