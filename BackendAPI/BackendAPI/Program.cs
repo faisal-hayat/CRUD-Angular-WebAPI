@@ -1,3 +1,4 @@
+using BackendAPI.Database;
 using BackendAPI.Services;
 using BackendAPI.Services.IServices;
 using Microsoft.EntityFrameworkCore;
@@ -13,8 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region add sql sever db context
-builder.Services.AddDbContext<BackendAPI.Data.ApplicationDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("DefaultConnection")
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection"),
+    x => x.MigrationsAssembly("BackendAPI")
 ));
 #endregion
 

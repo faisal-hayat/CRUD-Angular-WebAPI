@@ -1,7 +1,7 @@
 ﻿using BackendAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BackendAPI.Data
+namespace BackendAPI.Database
 {
     public class ApplicationDbContext: DbContext
     {
@@ -9,8 +9,7 @@ namespace BackendAPI.Data
         {
             
         }
-
-        // This is where we will be adding the models to DB
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Person> Persons { get; set; }
     }
 }

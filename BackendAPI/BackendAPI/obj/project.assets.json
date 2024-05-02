@@ -2974,6 +2974,35 @@
             "rid": "win"
           }
         }
+      },
+      "BackendAPI.Database/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BackendAPI.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.4"
+        },
+        "compile": {
+          "bin/placeholder/BackendAPI.Database.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BackendAPI.Database.dll": {}
+        }
+      },
+      "BackendAPI.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.4"
+        },
+        "compile": {
+          "bin/placeholder/BackendAPI.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BackendAPI.Models.dll": {}
+        }
       }
     }
   },
@@ -8539,10 +8568,21 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "BackendAPI.Database/1.0.0": {
+      "type": "project",
+      "path": "../BackendAPI.Database/BackendAPI.Database.csproj",
+      "msbuildProject": "../BackendAPI.Database/BackendAPI.Database.csproj"
+    },
+    "BackendAPI.Models/1.0.0": {
+      "type": "project",
+      "path": "../BackendAPI.Models/BackendAPI.Models.csproj",
+      "msbuildProject": "../BackendAPI.Models/BackendAPI.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BackendAPI.Database >= 1.0.0",
       "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter >= 8.0.4",
       "Microsoft.EntityFrameworkCore >= 8.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.4",
@@ -8577,7 +8617,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Angular\\CRUD_API\\BackendAPI\\BackendAPI.Database\\BackendAPI.Database.csproj": {
+              "projectPath": "E:\\Angular\\CRUD_API\\BackendAPI\\BackendAPI.Database\\BackendAPI.Database.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

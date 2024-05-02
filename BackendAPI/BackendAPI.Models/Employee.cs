@@ -17,7 +17,7 @@ namespace BackendAPI.Models
 
         [Range(10, 100, ErrorMessage = "Age must be greater then 10 and less then 100")]
         public int? Age { get; set; }
-        
+
         public int? Salary { get; set; }
     }
 }
