@@ -21,13 +21,12 @@ namespace BackendAPI.Services
             {
                 List<Employee> employeesList =  await _dbContext.Employees.ToListAsync();
                 return employeesList;
-                
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
         public async Task<Employee?> GetEmployeeById(int id)

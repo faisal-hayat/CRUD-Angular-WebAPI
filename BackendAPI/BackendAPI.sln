@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAPI", "BackendAPI\BackendAPI.csproj", "{9E2ECACC-E6DF-422A-AE4B-88EA0E25FB01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAPI.Database", "BackendAPI.Database\BackendAPI.Database.csproj", "{5CBDA413-5C8E-4FE0-B69C-2EB4CC922AB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAPI.Database", "BackendAPI.Database\BackendAPI.Database.csproj", "{5CBDA413-5C8E-4FE0-B69C-2EB4CC922AB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAPI.Models", "BackendAPI.Models\BackendAPI.Models.csproj", "{F175C9E2-6251-427A-8CBC-44BFE70F0C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAPI.Models", "BackendAPI.Models\BackendAPI.Models.csproj", "{F175C9E2-6251-427A-8CBC-44BFE70F0C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAPI.Services", "BackendAPI.Services\BackendAPI.Services.csproj", "{CD731311-D842-49D8-A617-AEE62F7CEEA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F175C9E2-6251-427A-8CBC-44BFE70F0C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F175C9E2-6251-427A-8CBC-44BFE70F0C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F175C9E2-6251-427A-8CBC-44BFE70F0C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD731311-D842-49D8-A617-AEE62F7CEEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD731311-D842-49D8-A617-AEE62F7CEEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD731311-D842-49D8-A617-AEE62F7CEEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD731311-D842-49D8-A617-AEE62F7CEEA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
