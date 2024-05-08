@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAPI.Database", "Back
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAPI.Models", "BackendAPI.Models\BackendAPI.Models.csproj", "{F175C9E2-6251-427A-8CBC-44BFE70F0C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAPI.Services", "BackendAPI.Services\BackendAPI.Services.csproj", "{CD731311-D842-49D8-A617-AEE62F7CEEA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAPI.Services", "BackendAPI.Services\BackendAPI.Services.csproj", "{CD731311-D842-49D8-A617-AEE62F7CEEA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

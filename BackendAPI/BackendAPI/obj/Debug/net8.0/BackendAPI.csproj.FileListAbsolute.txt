@@ -1,11 +1,3 @@
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.csproj.AssemblyReference.cache
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.GeneratedMSBuildEditorConfig.editorconfig
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.AssemblyInfoInputs.cache
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.AssemblyInfo.cs
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.csproj.CoreCompileInputs.cache
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.MvcApplicationPartsAssemblyInfo.cs
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.MvcApplicationPartsAssemblyInfo.cache
-E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.sourcelink.json
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\bin\Debug\net8.0\appsettings.Development.json
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\bin\Debug\net8.0\appsettings.json
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\bin\Debug\net8.0\BackendAPI.staticwebassets.runtime.json
@@ -253,6 +245,14 @@ E:\Angular\CRUD_API\BackendAPI\BackendAPI\bin\Debug\net8.0\BackendAPI.Database.d
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\bin\Debug\net8.0\BackendAPI.Models.dll
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\bin\Debug\net8.0\BackendAPI.Database.pdb
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\bin\Debug\net8.0\BackendAPI.Models.pdb
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.csproj.AssemblyReference.cache
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.AssemblyInfoInputs.cache
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.AssemblyInfo.cs
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.csproj.CoreCompileInputs.cache
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.sourcelink.json
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\staticwebassets.build.json
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\staticwebassets.development.json
 E:\Angular\CRUD_API\BackendAPI\BackendAPI\obj\Debug\net8.0\staticwebassets\msbuild.BackendAPI.Microsoft.AspNetCore.StaticWebAssets.props
