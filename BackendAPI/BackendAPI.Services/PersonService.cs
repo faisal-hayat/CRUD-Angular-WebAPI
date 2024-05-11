@@ -12,6 +12,9 @@ namespace BackendAPI.Services
     {
         List<Employee> IPersonService.GetAllemployees()
         {
+            string? name = SimpleClass.printName("Hello world");
+            SimpleClass simpleClass = new SimpleClass();
+            simpleClass.setName(name);
             throw new NotImplementedException();
         }
     }

@@ -41,5 +41,37 @@ namespace BackendAPI.Services
 
             }
         }
+
+        // static method
+        public static string? printName(string? name)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(name))
+                {
+                    Console.WriteLine("name is : " + name.ToString());
+                    return name;
+                }
+                else
+                {
+                    Console.WriteLine("Name not provided");
+                    return null;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public void setName(string? name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                this.firstName = name;
+            }            
+        }
+
+
     }
 }

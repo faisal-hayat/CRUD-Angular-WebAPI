@@ -10,5 +10,9 @@ namespace BackendAPI.Services.IServices
     public interface IPersonService
     {
         List<Employee> GetAllemployees();
+        Employee GetEmployee(int id);
+        Task AddEmployee(Employee employee);
+        Task UpdateEmployee(Employee employee, int id);
+        Task DeleteEmployee(int id);
     }
 }
