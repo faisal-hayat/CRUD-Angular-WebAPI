@@ -141,5 +141,15 @@ namespace BackendAPI.Controllers
             return _context.Employees.Any(e => e.Id == id);
         }
         #endregion
+
+
+        #region document upload
+        [HttpPost("uploadDocs")]
+        public IActionResult uploadDocument()
+        {
+            return Ok();
+        }
+        #endregion
+
     }
 }

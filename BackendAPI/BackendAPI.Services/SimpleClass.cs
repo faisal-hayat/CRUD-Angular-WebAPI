@@ -72,6 +72,24 @@ namespace BackendAPI.Services
             }            
         }
 
+        Employee IPersonService.GetEmployee(int id)
+        {
+            throw new NotImplementedException();
+        }
 
+        Task IPersonService.AddEmployee(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IPersonService.UpdateEmployee(Employee employee, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IPersonService.DeleteEmployee(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
